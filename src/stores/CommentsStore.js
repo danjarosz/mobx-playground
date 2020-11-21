@@ -2,7 +2,7 @@ import { observable, action } from "mobx";
 
 const NO_RESULT = -1;
 
-export default class CommentStore {
+export default class CommentsStore {
     @observable
     comments = [{
         id: 26738262387,
