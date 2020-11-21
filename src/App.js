@@ -1,10 +1,13 @@
 import React from 'react';
+import StoreProvider from './stores/StoreProvider';
 
 const App = () => {
   return (
-    <div>
-      Start
-    </div>
+    <StoreProvider>
+      <div>
+        Start
+      </div>
+    </StoreProvider>
   );
 }
 
