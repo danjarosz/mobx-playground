@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 import { StoreContext } from "./StoreProvider";
 
-//osobny hook do każdego stora z RootStore jest wymagant
+//osobny hook do każdego stora z RootStore jest wymagany
 
 export function useCommentsStore() {
     const rootStore = useContext(StoreContext);

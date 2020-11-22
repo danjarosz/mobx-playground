@@ -1,9 +1,11 @@
-import React, {useState, useCallback} from "react";
+import React, {useState} from "react";
+import { useCommentsStore } from "../stores/hooks";
 
 const Form = () => {
+    const { addComment } = useCommentsStore();
     const [inputData, setInputData] = useState("")
 
-    const handleSubmit = useCallback(
+    const handleSubmit = 
         (e) => {
             e.preventDefault();
             
@@ -12,17 +14,14 @@ const Form = () => {
                 comment: inputData
             }
 
+            addComment(comment);
             console.log(comment)
 
             setInputData("")
-        },
-        [],
-    )
+        }
 
-    const handleInputChange = useCallback(
-        (e) => setInputData(e.target.value),
-        [],
-    )
+    const handleInputChange = (e) => setInputData(e.target.value)
+
 
     return (
         <form onSubmit={handleSubmit}>
