@@ -5,7 +5,8 @@ export default class CommentsStore {
         makeObservable(this, {
             comments: observable,
             addComment: action,
-            removeComment: action
+            removeComment: action,
+            editComment: action
         })
     }
 
@@ -18,5 +19,20 @@ export default class CommentsStore {
 
     removeComment = id => {
         this.comments = this.comments.filter(comment => comment.id !== id)
+    }
+
+    editComment = (id, newCommentText) => {
+        this.comments = this.comments.map(commentItem => {
+            if (commentItem.id !== id) {
+                return commentItem;
+            }
+
+            const editedComment = {
+                id: commentItem.id,
+                comment: newCommentText
+            }
+
+            return editedComment;
+        })
     }
 };
