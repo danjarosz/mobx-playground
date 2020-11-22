@@ -15,7 +15,6 @@ const Form = () => {
             }
 
             addComment(comment);
-            console.log(comment)
 
             setInputData("")
         }
