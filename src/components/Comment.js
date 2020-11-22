@@ -14,7 +14,7 @@ const Comment = ({ comment }) => {
     const handleEditComment = (e) => {
         const id = Number(e.target.dataset.id);
         editComment(id, commentText)
-        handleCloseEditMode()
+        setOpenEditMode(false)
     }
 
     const handleOpenEditMode = () => {
@@ -23,6 +23,7 @@ const Comment = ({ comment }) => {
 
     const handleCloseEditMode = () => {
         setOpenEditMode(false)
+        setCommentText(comment.comment)
     }
 
     const handleCommentTextChange = (e) => {
